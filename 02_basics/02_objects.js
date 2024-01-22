@@ -102,3 +102,38 @@ console.log([
 ])   
 
 // isEnumerable property 
+
+// Destructuring of objects in javascript
+
+const course = {
+    courseName : "js in Hindi",
+    price : "9919",
+    courseInstructor : "Amit"
+}
+
+const {courseInstructor} = course;
+console.log(courseInstructor);
+
+// const navbar = ({company}) => {
+
+// }
+
+// navbar(company = "amit");
+
+
+// API response can be sometimes tricky to undestand as diffenrt objects can be sdend in an array with heavy nesting 
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
+// {
+//     "name" : "Amit",
+//     "course" : "JS tutorial",
+//     "price" : 2143
+// }
+
+// third typical API response can be seen from the random user genrator site.
+
