@@ -1,0 +1,71 @@
+// javascript execution context -> how the javascript will run the program/code
+
+// Global EC -> this mein rakh diya jata hai 
+
+// sabka this value alag hota hai browser / deno / node 
+
+// browser mein window object as a value aati hai this mein.
+
+// // many times your react app is not working because you have renderd on server side and there you dont have access to window object
+// Javascript single threaded hai 
+
+// 1. global execution context 
+// 2. function execution context 
+// 3. eval execution context
+
+// {} -> first phase => memory creation phase
+// -> second phase => execution phase
+
+
+let val1 = 10
+let val2 = 5
+function addNum(Num1, Num2)
+{
+    let total = Num1 + Num2;
+    return total;
+}
+let result1 = addNum(val1, val2);
+let result2 = addNum(10, 2);
+
+1. global execution -> this
+2. memory phase 
+val1 => undefined similarirly 
+val2 = undefined
+addnum -> definition
+
+result1 -> undefined
+result2 = undefined
+
+3. execution phase 
+val1 <- 10;
+val2 <- 5;
+addNum -> new execution context banega jab bhi function call hoga.
+everytime the memory phase and execution will be made when a new execution context is created.
+
+
+ now for the addNum(val1, val2)
+
+ Memory phase
+ val1 -> undefined
+ val2 -> undefined
+ total -> undefined
+
+execution phase 
+num1 <- 10
+num2 <- 5
+total <- 15
+
+the toal value is returned to global execution context 
+now the new execution context that was created durung the call of the function addNum(val1, val2) will get deleted.
+
+now back to line 44 after the addNum functions exectution phase in this doc 
+
+result1 <- 15
+addNum(10,2)
+
+same process from the line 46 to 59 will happen and the result2 val will get updated to 12 .
+
+/* Call Stack */
+LIFO will be followed and the last that came in the call stack will remove forst.LIFO
+
+
