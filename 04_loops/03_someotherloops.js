@@ -97,3 +97,6 @@ const myCoding = [
 myCoding.forEach( (item) => {
     console.log(item.languageName);
 })
+
+
+// here if we try to return some value with the foreach loop we wont be able to do it, as the forEach doesnt allow returning a value.
